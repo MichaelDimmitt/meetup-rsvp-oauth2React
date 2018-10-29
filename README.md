@@ -1,3 +1,6 @@
+## Create React App less that 40KB without ejecting.
+This would have been the case by default if the files were being gzip-ped.
+
 ### Curious what node_modules your react scripts are using?
 package-lock.json shows nodemodules used.
 
@@ -26,6 +29,13 @@ BeginnerGuidetoCodeSplitting(better at the end): https://www.youtube.com/watch?v
 Keep bundle below 40 KB, realistically 50 KB
 
 I would like to have react and a skeleton website for different entrypoints in the bundle.js they have to be gzipped to have it at that size. Additional javascript files get brought in with react-loadable code splitting for the rest of the project. Try to limit waterfalling to often in the network tab.
+
+** Having manually gzip'ed the files **
+Oct29: manually gzip'ing files is required to get the javascript this small.
+<br/>Current achived bundle.js or chunk.js size is 35.1 KB.
+
+Another measurement to keep in mind is the overall size of data transfered on the network tab when on an incognito window with cache disabled. Currently 38.3 KB.
+** Having manually gzip'ed the files **
 
 ### Things achieved so far:
 1) Verified cra2.0 is using @babel/preset-env and compiling twice by using modules:false [here at master](https://github.com/facebook/create-react-app/blob/master/packages/babel-preset-react-app/create.js#L73) or [here_prev_commit](https://github.com/facebook/create-react-app/blob/1d4fdc2dd4950011beacf1883900bf5d8da7079e/packages/babel-preset-react-app/index.js#L59)
