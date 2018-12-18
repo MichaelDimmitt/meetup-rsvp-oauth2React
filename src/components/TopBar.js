@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import logo from '../img/logo.png';
 
 class TopBar extends Component {
@@ -9,18 +7,14 @@ class TopBar extends Component {
   };
   render() {
     return (
-      <div>
-        <AppBar position="static" color="primary">
-          <Toolbar>
-            <div className="logo-wrapper">
-              <img src={logo} onClick={() => this.goHome()} alt="app_logo" />
-            </div>
+      <div style={{backgroundColor:"#3f51b5", display:'flex', flexDirection:'row', justifyContent: "space-between", alignItems:'center'}} >
+          <div className="logo-wrapper" style={{marginLeft:'20px'}}>
+            <img src={logo} onClick={() => this.goHome()} alt="app_logo" />
+          </div>
 
-            <div className="profile">
-              <div>UserName</div>
-            </div>
-          </Toolbar>
-        </AppBar>
+          <div className="profile" style={{color: 'white', marginRight:'40px'}}>
+            <div>UserName</div>
+          </div>
       </div>
     );
   }
