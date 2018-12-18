@@ -1,4 +1,4 @@
-## Create React App less that 40KB without ejecting.
+## Create React App less that 43KB without ejecting.
 This would have been the case by default if the files were being gzip-ped. Currently not occuring.
 
 ## Next Deliverables,
