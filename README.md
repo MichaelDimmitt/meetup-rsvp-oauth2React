@@ -2,8 +2,9 @@
 This would have been the case by default if the files were being gzip-ped. Currently not occuring.
 
 ## Next Deliverables,
-1) react loadable implementation.
-2) react router implementation.
+~1) react loadable implementation.~
+~2) react router implementation.~
+~3) implement material-ui~
 
 ### Curious what node_modules your react scripts are using?
 `package-lock.json` shows nodemodules used.
