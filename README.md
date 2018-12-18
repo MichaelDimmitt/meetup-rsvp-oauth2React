@@ -6,7 +6,9 @@ This would have been the case by default if the files were being gzip-ped. Curre
 ~2) react router implementation.~
 ~3) implement material-ui~
 ~4) remove material-ui~
-5) add tachyonss css
+~5) add tachyonss css~
+6) implement redux
+7) implement faskclicks, aka react-tap-event-plugin - http://stackoverflow.com/a/34015469/988941
 
 ### Curious what node_modules your react scripts are using?
 `package-lock.json` shows nodemodules used.
