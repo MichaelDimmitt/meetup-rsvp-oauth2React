@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
-import Loadable from 'react-loadable';
-import Loading from './Loading';
+import Routes from './Routes';
 
-const LoadableComponent = Loadable({
-  loader: () => import('./HomePage'),
-  loading: Loading,
-});
-
-export default class App extends React.Component {
+export default class App extends Component {
   render() {
-    return <LoadableComponent/>;
+    return (
+      <Router className="App">
+        <div>
+          <Route exact path="/" render={() => <Redirect to="/app/HomePage" />} />
+          <Route path="/app" component={Routes} />
+        </div>
+      </Router>
+    );
   }
 }
