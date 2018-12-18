@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import TopBar from './components/TopBar';
-import HomePage from './HomePage';
+import HomePage from './components/HomePage';
 import Loadable from 'react-loadable';
-import Loading from './Loading';
+import Loading from './components/Loading';
 
 const Settings = Loadable({
   loader: () => import('./components/Settings'),

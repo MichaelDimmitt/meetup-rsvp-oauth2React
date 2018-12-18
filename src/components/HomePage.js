@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import '../App.css';
 
 class HomePage extends Component {
   render() {
@@ -10,7 +9,6 @@ class HomePage extends Component {
           backgroundColor: '#282c34', minHeight: '100vh', display: 'flex', flexDirection: 'column',
           alignItems: 'center', justifyContent: 'center', fontSize: 'calc(10px + 2vmin)', color: 'white'}}
         >
-          <img src={logo} style={{animation: 'App-logo-spin infinite 20s linear', height: '40vmin'}}  alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
