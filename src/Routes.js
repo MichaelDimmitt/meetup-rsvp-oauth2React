@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import TopBar from './components/TopBar';
 import Loadable from 'react-loadable';
 import Loading from './components/Loading';
 
@@ -10,6 +9,11 @@ const Settings = Loadable({
 });
 const HomePage = Loadable({
   loader: () => import('./components/HomePage'),
+  loading: Loading,
+});
+
+const TopBar = Loadable({
+  loader: () => import('./components/TopBar'),
   loading: Loading,
 });
 
