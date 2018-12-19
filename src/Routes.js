@@ -17,8 +17,14 @@ const Settings = Loadable({
   loader: () => import('./components/Settings'),
   loading: Loading,
 });
+
 const HomePage = Loadable({
   loader: () => import('./components/HomePage'),
+  loading: Loading,
+});
+
+const Login = Loadable({
+  loader: () => import('./components/Login'),
   loading: Loading,
 });
 
@@ -35,6 +41,7 @@ class Routes extends Component {
             render={() => <Redirect to="/app/RsvpMe" />}
           />
           <Route path={`${match.url}/RsvpMe`} component={RsvpComponent} />
+          <Route path={`${match.url}/Login`} component={Login} />
           <Route path={`${match.url}/HomePage`} component={HomePage} />
           <Route path={`${match.url}/Settings`} component={Settings} />
         </section>
