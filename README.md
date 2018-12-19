@@ -9,6 +9,10 @@ This would have been the case by default if the files were being gzip-ped. Curre
 ~5) add tachyonss css~
 6) implement redux
 
+## thanks to @meup
+for getting react with redux working for the meetup.com oauth2 requests.
+https://www.github.com/epoch/meup
+
 ### Curious what node_modules your react scripts are using?
 `package-lock.json` shows nodemodules used.
 
