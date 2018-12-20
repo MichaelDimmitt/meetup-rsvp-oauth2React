@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import Loading from './components/Loading';
-import { connect } from 'react-redux'
 
 const TopBar = Loadable({
   loader: () => import('./components/TopBar'),
@@ -31,8 +30,7 @@ const Login = Loadable({
 
 class Routes extends Component {
   render() {
-    const { match, meetups, meetup, route, isFetching } = this.props
-    console.log('show/demonstrate redux info', { match, meetups, meetup, route, isFetching}, 'show/demonstrate redux info' )
+    const { match } = this.props
 
     return (
       <div style={{ width: '100vw', height: '20px' }}>
@@ -53,15 +51,4 @@ class Routes extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  console.info('hola some state', state,'hola some state')
-  return {
-    meetups: state.meetups,
-    meetup: state.meetup,
-    route: state.route,
-    session: state.session,
-    isFetching: state.isFetching
-  }
-}
-
-export default connect(mapStateToProps)(Routes)
+export default Routes
