@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
-import { toHome, toMeetupDetails, loadData, saveSession, fetchMeetups } from './actions';
+import { toHome, toMeetupDetails, loadData, saveSession, fetchMeetups, rsvpMe } from './actions';
 import reducer from './reducer';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Routes from './Routes';
@@ -48,6 +48,8 @@ if (sessionAccessToken && sessionExpiresAt) {
 
   store.dispatch(loadData())
   store.dispatch(fetchMeetups(sessionAccessToken))
+  store.dispatch(rsvpMe(sessionAccessToken))
+  
 
 } else {
   console.info('first time visitor')
@@ -61,6 +63,7 @@ if (sessionAccessToken && sessionExpiresAt) {
     console.info('save to session storage and state')
     store.dispatch(saveSession(oauthResponse))
     store.dispatch(fetchMeetups(oauthResponse.access_token))
+    store.dispatch(rsvpMe(oauthResponse.access_token))
   }
 }
 

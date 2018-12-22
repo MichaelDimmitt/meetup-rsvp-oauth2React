@@ -56,8 +56,41 @@ export function receivedMeetups(json) {
     meetups: json,
   };
 }
+export function rsvpMe(token){
+  
+  return (dispatch, getState) => {
+    const timeNow = new Date() / 1000; // in seconds
+    if (shouldRenewToken(getState(), timeNow)) {
+      console.info('need to renew token');
+      dispatch(toLogin());
+    } else {
+      console.info('token still good');
+      dispatch(requestMeetups());
+      dispatch(toHome());
+      window.location.hash = 'rsvp';
+      
+      /* Values not used in axios post request. but may need to be used one day.
+        crossDomain: true,
+        data: {  },
+       */
+      const config = {
+        method: 'POST',
+        url: 'https://api.meetup.com/2/rsvp',
+        params: {
+          rsvp:'no', event_id: 'gqnjlqyxqbdc',
+          access_token: token,
+        }
+      };
+      return axios(config)
+      .catch(err => { console.log(err) })
+      .then(res => { console.log(res) });
+
+    }
+  }
+}
 
 export function fetchMeetups(token) {
+  console.log(' blaha habhsbkajsbdkbsbdkjbds', token)
   return (dispatch, getState) => {
     const timeNow = new Date() / 1000; // in seconds
     if (shouldRenewToken(getState(), timeNow)) {
