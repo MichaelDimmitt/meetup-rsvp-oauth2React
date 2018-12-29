@@ -1,65 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title> hit </title>
-    <style>
-      /*
-      .flex {
-        display:flex; background-color: powderblue;
-        width: 90%; align-items:center; justify-content:center;
-        flex:1; height: 25px
-      }
-      */
-    </style>
-  </head>
-  <body style="">
 
-    <section style="">
+  <body style="">
+    <section style="background-color:powderblue; padding-top:20px; padding-left:20px; min-width: 466px;">
         <div className="">
-            <div style="">
-              Logged In as UserName
-            </div>
+            Logged In as UserName
         </div>
         <br/>
-        <div style="">
-            <span style="">
+        <span style="display:flex">
+            <span style="min-width: 164px;">
                 <button>
                     Rsvp Yes All
                 </button>
             </span>
-            <span style="">
+            <span style="min-width: 76px">
                 <button>
                     Rsvp No All
                 </button>
             </span>
-            <span style="">
+            <span style="width:100%; text-align:center;" >
               Status: So far no rsvp logged
             </span>
-        </div>
+        </span>
         <br/>
-        <div style="">
-            <span style="">
+        <div style="display: flex;  padding: 3px 0px 3px 0px;">
+            <span style="min-width: 164px;">
                 Search group
             </span>
-            <span style="">
-                <input style="" type="text" name="LastName" placeholder="(provides all meetups results if not modified)">
+            <span style="width:100%;">
+                <input style="width:95%" type="text" name="LastName" placeholder="(provides all meetups results if not modified)">
             </span>
         </div>
-        <div style="">
-            <span style="">
+        <div style="display: flex; padding: 3px 0px 3px 0px;">
+            <span style="min-width: 164px;">
               Search Common Title
             </span>
-            <span style="">
-              <input style="" type="text" name="LastName" placeholder="(provides all meetups results if not modified)">
+            <span style="width:100%;">
+              <input style="width:95%" type="text" name="LastName" placeholder="(provides all meetups results if not modified)">
             </span>
         </div>
         <br/>
         <div className="flex">
-            <div style="" className="flex">
-            <button>
-                Search
-            </button>
-            </div>
+            <button>Search</button>
         </div>
         <br/>
         <div style="">
@@ -70,6 +52,7 @@
               --------------------------------------------------------------------------------
             </div>
         </div>
+        </br>
 
     </section>
   </body>
