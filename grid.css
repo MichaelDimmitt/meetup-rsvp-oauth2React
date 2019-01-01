@@ -1,0 +1,50 @@
+
+.grid-container {
+   height: calc(100vh - 1em);
+   display: grid;
+   grid-gap: 15px;
+   grid-template-columns: 150px 104px 1fr;
+   grid-template-rows: repeat(6, auto);
+   grid-template-areas:
+     "header  header  header"
+     "button  button  button"
+     "title   input   input"
+     "title1   input1   input1"
+     "button1  .       ."
+     "results results results";
+}
+
+/* map all html elements to grid areas! */
+header { grid-area: header; }
+button { grid-area: button; }
+.button1 { grid-area: button1; }
+.rsvp { grid-area: rsvp; }
+.title { grid-area: title; }
+.title1 { grid-area: title1; }
+input { grid-area: input; }
+.input1 { grid-area: input1; }
+.results { grid-area: results; }
+.status { grid-area: status; background-color:red; }
+
+
+main   { grid-area: main; }
+nav    { grid-area: navigation; }
+aside  { grid-area: flushFirstElement; }
+footer { grid-area: footer; }
+
+@media screen and (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(9, auto);
+    grid-template-areas:
+      "header  "
+      "button  button"
+      "status  status"
+      "title   title"
+      "input   input"
+      "title   title"
+      "input1   input1"
+      "button  button"
+      "results results";
+  }
+}
