@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import Loading from './components/Loading';
+import { connect } from 'react-redux'
 
 const TopBar = Loadable({
   loader: () => import('./components/TopBar'),
@@ -28,9 +29,14 @@ const Login = Loadable({
   loading: Loading,
 });
 
+const Meetups = Loadable({
+  loader: () => import('./components/Meetups'),
+  loading: Loading,
+});
+
 class Routes extends Component {
   render() {
-    const { match } = this.props
+    const { match, meetups, meetup, route, isFetching } = this.props
 
     return (
       <div style={{ width: '100vw', height: '20px' }}>
@@ -41,7 +47,9 @@ class Routes extends Component {
             path="/app"
             render={() => <Redirect to="/app/RsvpMe" />}
           />
-          <Route path={`${match.url}/RsvpMe`} component={RsvpComponent} />
+          <Route path={`${match.url}/RsvpYes`} component={RsvpComponent} />
+          <Route path={`${match.url}/meetups`} render={(props) => <Meetups meetups={meetups} onSelect={this.show} isFetching={isFetching} /> } />
+
           <Route path={`${match.url}/Login`} component={Login} />
           <Route path={`${match.url}/HomePage`} component={HomePage} />
           <Route path={`${match.url}/Settings`} component={Settings} />
@@ -50,5 +58,15 @@ class Routes extends Component {
     );
   }
 }
+function mapStateToProps(state) {
+  console.info(state)
+  return {
+    meetups: state.meetups,
+    meetup: state.meetup,
+    route: state.route,
+    session: state.session,
+    isFetching: state.isFetching
+  }
+}
 
-export default Routes
+export default connect(mapStateToProps)(Routes)
