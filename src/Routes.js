@@ -33,6 +33,11 @@ const Meetups = Loadable({
   loader: () => import('./components/Meetups'),
   loading: Loading,
 });
+const MeetupsRevamp = Loadable({
+  loader: () => import('./components/MeetupsRevamp'),
+  loading: Loading,
+});
+
 
 class Routes extends Component {
   render() {
@@ -53,6 +58,8 @@ class Routes extends Component {
           <Route path={`${match.url}/Login`} component={Login} />
           <Route path={`${match.url}/HomePage`} component={HomePage} />
           <Route path={`${match.url}/Settings`} component={Settings} />
+          <Route path={`${match.url}/MeetupsRevamp`} component={MeetupsRevamp} />
+          
         </section>
       </div>
     );
