@@ -71,7 +71,7 @@ ReactDOM.render(
   <Provider store={store}>
       <Router className="App">
         <div>
-          <Route exact path="/" render={() => <Redirect to="/app/HomePage" />} />
+          <Route exact path="/" render={() => <Redirect to="/app/Login" />} />
           <Route path="/app" component={Routes} />
         </div>
       </Router>
